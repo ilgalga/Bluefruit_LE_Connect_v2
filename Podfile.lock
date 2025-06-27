@@ -17,18 +17,6 @@ PODS:
     - "UIColor+Hex/NSColor (= 1.0.1)"
     - "UIColor+Hex/UIColor (= 1.0.1)"
   - "UIColor+Hex/UIColor (1.0.1)"
-  - VectorMath (0.4.1):
-    - VectorMath/Core (= 0.4.1)
-    - VectorMath/MapKit (= 0.4.1)
-    - VectorMath/Quartz (= 0.4.1)
-    - VectorMath/SceneKit (= 0.4.1)
-  - VectorMath/Core (0.4.1)
-  - VectorMath/MapKit (0.4.1):
-    - VectorMath/Core
-  - VectorMath/Quartz (0.4.1):
-    - VectorMath/Core
-  - VectorMath/SceneKit (0.4.1):
-    - VectorMath/Core
   - ZIPFoundation (0.9.11)
 
 DEPENDENCIES:
@@ -38,7 +26,6 @@ DEPENDENCIES:
   - MSWeakTimer (~> 1.1.0)
   - SwiftyXML (~> 2.0.0)
   - "UIColor+Hex (~> 1.0.1)"
-  - VectorMath (~> 0.4.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -50,7 +37,6 @@ SPEC REPOS:
     - SwiftAlgorithms
     - SwiftyXML
     - "UIColor+Hex"
-    - VectorMath
     - ZIPFoundation
 
 SPEC CHECKSUMS:
@@ -62,9 +48,8 @@ SPEC CHECKSUMS:
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwiftyXML: 332cbc28563e25303879777375dfbbd746b5ad2a
   "UIColor+Hex": 9fee91bb8e19f17dd40a79ae1e98949a6a84489d
-  VectorMath: 55dded3a69e5061add78d06275561bc25ead2999
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: 8ad53967153f78e4ed8ef7f702198a7ed1217965
+PODFILE CHECKSUM: manual
 
 COCOAPODS: 1.14.3

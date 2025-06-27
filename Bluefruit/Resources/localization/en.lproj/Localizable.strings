@@ -375,52 +375,6 @@ Each unique set of data samples must be terminated by a LINE FEED character (0x0
 
 • Use specific \"hex\" and \"init\" files to update your device. Please take into account that this could brick the peripheral if the firmware is not compatible";
 
-// PinIO
-"pinio_tab_title" = "Pin I/O";
-"pinio_navigation_title_format" = "Pin I/O - %@";
-
-"pinio_capabilityquery_querying_title" = "Querying pin capabilities...";
-
-"pinio_capabilityquery_expired_title" = "No response to capability query";
-"pinio_capabilityquery_expired_message" = "Assuming default pin format
-(Arduino Uno)";
-
-"pinio_pins_header" = "Available Pins";
-"pinio_pintype_unknown" = "Unknown";
-"pinio_pintype_input" = "Input";
-"pinio_pintype_output" = "Output";
-"pinio_pintype_pwm" = "PWM";
-"pinio_pintype_servo" = "Servo";
-"pinio_pintype_analog" = "Analog";
-"pinio_pintype_low" = "Low";
-"pinio_pintype_high" = "High";
-"pinio_pintype_input_floating" = "Floating";
-"pinio_pintype_inputfloating_long" = "Input Floating";
-"pinio_pintype_input_pullup" = "Pull Up";
-"pinio_pintype_inputpullup_long" = "Input Pullup";
-"pinio_pinname_digital_format" = "Pin %ld";
-"pinio_pinname_analog_format" = "Pin %ld, Analog %ld";
-"pinio_tag_mode" = "Mode";
-
-"pinio_help_title" = "Pin I/O";
-"pinio_help_text" = "Instructions:
-
-• The Pin I/O mode works with an Arduino board running the BLEFirmata sketch.  Detailed instructions can be found here:
-https://learn.adafruit.com/bluefruit-le-connect-for-ios/pin-i-slash-o
-
-• Tap a row in the table corresponding to the Arduino pin you want to control.
-
-• Select a pin mode: 
-   Input - monitor pin's state
-   Output - enable setting of pin state
-   Analog - monitor Analog pin input
-   PWM - set a pin's pulse width  output
-
-• Set an Output pin's state using the Low/High control.
-
-• Set a PWM pin's output value using the slider control.
-
-• Once finished setting a pin's mode or state, you can close it by tapping the empty space near it's top - or by selecting another row.";
 
 // Controller
 "controller_tab_title" = "Controller";
@@ -452,69 +406,6 @@ https://learn.adafruit.com/bluefruit-le-connect-for-ios/pin-i-slash-o
 "controller_location_unknown" = "Waiting for location data…";
 "controller_magnetometermissing" = "Your device doesn't have a magnetic sensor";
 
-"controller_module_pad" = "Control Pad";
-"controller_module_colorpicker" = "Color Picker";
-
-"controller_help_title" = "Controller";
-"controller_help_text_ios_android" = "The Controller module streams sensor data from your iOS device to Bluefruit LE over UART at a frequency of 10Hz. Activation of a switch will begin sending relevant data. Each packet sent begins with single byte char “!” (0x21) followed by a single byte char initial, and sensor data encoded as float values of 4 byte length
-
-• Quaternion sends iOS Device Motion data to describe device attitude. This data is derived from Accelerometer, Gyro, and Magnetometer readings.
-Format: [ ‘!’ ] [ ‘Q’ ] [ float x ] [ float y ] [ float z ] [ float w ]
-
-• Accelerometer sends raw accelerometer data
-Format: [ ‘!’ ] [ ‘A’ ] [ float x ] [ float y ] [ float z ]
-
-• Gyro sends raw gyroscope data as:
-Format: [ ‘!’ ] [ ‘G’ ] [ float x ] [ float y ] [ float z ]
-
-• Magnetometer sends raw magnetometer data which is uncalibrated and does not account for interference from source device.
-Format: [ ‘!’ ] [ ‘M’ ] [ float x ] [ float y ] [ float z ]
-
-• Location sends GPS data and requires user permission before initial use.
-Format: [ ‘!’ ] [ ‘L’ ] [ float latitude ] [ float longitude ] [ float altitude ]";
-"controller_help_text_mac" = "The Controller module streams sensor data from your computer to Bluefruit LE over UART at a frequency of 10Hz. Activation of a switch will begin sending relevant data. Each packet sent begins with single byte char “!” (0x21) followed by a single byte char initial, and sensor data encoded as float values of 4 byte length
-
-• Location sends GPS data and requires user permission before initial use.
-Format: [ ‘!’ ] [ ‘L’ ] [ float latitude ] [ float longitude ] [ float altitude ]";
-
-// Control Pad
-
-"controlpad_title" = "Control Pad";
-
-"controlpad_help_title" = "Control Pad";
-"controlpad_help_text" = "The Control Pad function provides a familiar momentary button interface for common control scenarios. Data is sent on the press and release of each button. Each packet consists of 4 bytes, each representing a char value. The first two chars identify the packet as a button message, the third specifies a button, and the fourth signifies either a press or release. Example:
-
-Button 4 pressed:  [ ‘!’ ] [ ‘B’ ] [ ‘4’ ] [ ‘1’ ]
-Button 4 released: [ ‘!’ ] [ ‘B’ ] [ ‘4’ ] [ ‘0’ ]
-
-Note: Any activated sensor data streams will continue while using the Control Pad.";
-
-// Color Picker
-
-"colorpicker_title" = "Color Picker";
-
-"colorpicker_brightness" = "Brightness:";
-"colorpicker_saturation" = "Saturation:";
-"colorpicker_wcomponent" = "W component:";
-"colorpicker_rgb_format" = "RGB: %ld-%ld-%ld";
-"colorpicker_rgbw_format" = "RGBW: %ld-%ld-%ld-%ld";
-"colorpicker_hex_format" = "Hex: %@";
-"colorpicker_select_action" = "Select";
-
-"colorpicker_boardselector_action" = "Board Selector";
-"colorpicker_boardtype_action" = "Board Type";
-
-
-"colorpicker_help_title" = "Color Picker";
-"colorpicker_help_text" = "The Color Picker sends a color's RGB values to Bluefruit LE.  This can be used to control the state of RGB LEDs such as Neopixels.
-
-• Touch the color wheel to choose desired color
-
-• Press Send to send the chosen color's red, green, and blue values to Bluefruit via UART in the following format:
-[ ‘!’ ] [ ‘C’ ] [ byte r ] [ byte g ] [ byte b ]";
-
-
-// NeoPixels
 "neopixels_tab_title" = "Neopixels";
 "neopixels_navigation_title_format" = "Neopixels - %@";
 
@@ -557,10 +448,6 @@ Note: Any activated sensor data streams will continue while using the Control Pa
 "neopixelcomponentselector_pixelorder_title" = "Pixel Order";
 "neopixelcomponentselector_speed_400khz" = "400 Khz Mode";
 
-// Calibration
-"calibration_tab_title" = "AHRS/Calibration";
-"calibration_navigation_title_format" = "AHRS/Calibration - %@";
-
 // Thermal Camera
 "thermalcamera_tab_title" = "Thermal Camera";
 "thermalcamera_navigation_title_format" = "Thermal Camera - %@";
@@ -574,104 +461,6 @@ Note: Any activated sensor data streams will continue while using the Control Pa
 "thermalcamera_magnification_filtered" = "Filtered";
 
 "thermalcamera_temprange_title" = "Temperature Range:";
-
-// Image Transfer
-"imagetransfer_tab_title" = "Image Transfer";
-"imagetransfer_navigation_title_format" = "Image Transfer - %@";
-
-"imagetransfer_help_title" = "Image Transfer";
-"imagetransfer_help_text" = "The Image Transfer module sends the image of your choice to Bluefruit LE over UART.
-
-Format:
-- single byte char “!” (0x21)
-- single byte char 'I' (0x49)
-- bit depth (uint8 16 for 16bits 565 or 24 for 24-bit 888)
-- image width (uint16 little endian, 2 bytes)
-- height (uint16 little endian, 2 bytes)
-- pixel data encoded as \"RGB 16bit 565” or \"RGB 24-bit 888\" depending on the Bit Depth selected
-- single byte CRC
-
-Resolution:
-Choosing a resolution determines the pixel dimensions in [width] x [height]. Switching to E-ink mode provides access to common e-ink screen dimensions and converts the resulting image's color to black, white, & red using a dithering algorithm specially designed for e-ink displays.
-
-Transfer mode:
-This setting affects the speed of the data transfer. The recommended value is “Interleaved [50:1]”
-Take into account that data could be lost if the speed is too fast and your phone or the Bluefruit LE peripheral are not able to process it fast enough.
-
-The possible values for Transfer mode are:
-- Without response: Send packets without waiting for acknowledgement. This is the fastest method.
-- With response: Send each packet waiting for acknowledgment. This is the slowest and safest method.
-- Interleaved: sends a number of packets without response for each packet with response.
-
-
-";
-"imagetransfer_help_text_macos_noeink" = "The Image Transfer module sends the image of your choice to Bluefruit LE over UART.
-
-Format:
-- single byte char “!” (0x21)
-- single byte char 'I' (0x49)
-- bit depth (uint8 16 for 16bits 565 or 24 for 24-bit 888)
-- image width (uint16 little endian, 2 bytes)
-- height (uint16 little endian, 2 bytes)
-- pixel data encoded as \"RGB 16bit 565” or \"RGB 24-bit 888\" depending on the Bit Depth selected
-- single byte CRC
-
-Resolution:
-Choosing a resolution determines the pixel dimensions in [width] x [height].
-
-Transfer mode:
-This setting affects the speed of the data transfer. The recommended value is “Interleaved [50:1]”
-Take into account that data could be lost if the speed is too fast and your device or the Bluefruit LE peripheral are not able to process it fast enough.
-
-The possible values for Transfer mode are:
-- Without response: Send packets without waiting for acknowledgement. This is the fastest method.
-- With response: Send each packet waiting for acknowledgment. This is the slowest and safest method.
-- Interleaved: sends a number of packets without response for each packet with response.
-
-
-";
-
-"imagetransfer_waitingforuart" = "Waiting for Uart...";
-"imagetransfer_resolution_title" = "Resolution:";
-"imagetransfer_resolution_einkprefix" = "E-Ink";
-"imagetransfer_resolution_value_default" = "Default";
-"imagetransfer_image_title" = "Image:";
-"imagetransfer_image_value_default" = "Default";
-"imagetransfer_transfermode_title" = "Transfer mode:";
-"imagetransfer_transfermode_value_withresponse" = "With Response";
-"imagetransfer_transfermode_value_withoutresponse" = "Without Response";
-"imagetransfer_transfermode_value_interleaved" = "Interleaved";
-"imagetransfer_transfermode_value_interleaved_format" = "Interleaved [%ld : 1]";
-"imagetransfer_transfermode_interleavedcount_title" = "Interleaved";
-"imagetransfer_transfermode_interleavedcount_message" = "Number of packets without response for each packet with response (default value = 50)";
-"imagetransfer_transfermode_interleavedcount_hint" = "Enter number";
-
-"imagetransfer_selectimage_action" = "Select image";
-"imagetransfer_imagepicker_camera" = "Take photo";
-"imagetransfer_imagepicker_cameraroll" = "Camera roll";
-"imagetransfer_imagepicker_photolibrary" = "Photo library";
-"imagetransfer_imagepicker_filepicker" = "Open file...";
-"imagetransfer_imageorigin_choose" = "Choose Image";
-"imagetransfer_resolution_choose" = "Choose Resolution";
-"imagetransfer_resolution_mode_standard" = "Standard";
-"imagetransfer_resolution_mode_eink" = "E-Ink";
-"imagetransfer_send_action" = "Send Image";
-"imagetransfer_cameranotavailable" = "Camera is not available";
-"imagetransfer_decodeimage_error" = "Image cannot be decoded";
-"imagetransfer_outofmemory_error" = "Image too big for available memory";
-"imagetransfer_transferring" = "Sending image...";
-"imagetransfer_senddata_error" = "There was an error while transferring the image data";
-"imagetransfer_crop_action" = "Crop image";
-"imagetransfer_crop_error" = "Error cropping image ";
-"imagetransfer_colorspace_title" = "Bit Depth:";
-"imagetransfer_colorspace_16bit" = "16-bit";
-"imagetransfer_colorspace_24bit" = "24-bit";
-
-"imagetransfer_cameraneeded" = "Access to the camera is needed to take pictures";
-"imagetransfer_readexternalneeded" = "Access to the media library is needed to choose picture";
-
-
-
 
 // Common
 "dialog_ok" = "OK";
@@ -706,14 +495,12 @@ Tap a row's connect button to connect the corresponding device in one of the ava
 
 • Plotter - plot incoming numeric data in a chart
 
-• Pin I/O - uses Bluefruit's UART to control Arduino running BLEFirmata sketch:
 https://learn.adafruit.com/getting-started-with-the-nrf8001-bluefruit-le-breakout/software-bluefruit-firmata
 
 • Controller - streams sensor data from your device to Bluefruit LE over UART
 
 • Neopixels - control NeoPixels individually with an interactive color picker
 
-• Image Transfer - send an image to Bluefruit LE over UART
 
 • Updates - update device firmware
 
@@ -773,14 +560,12 @@ Tap a row's connect button to connect the corresponding device in one of the ava
 
 • Plotter - plot incoming numeric data in a chart
 
-• Pin I/O - uses Bluefruit's UART to control Arduino running BLEFirmata sketch:
 https://learn.adafruit.com/getting-started-with-the-nrf8001-bluefruit-le-breakout/software-bluefruit-firmata
 
 • Controller - streams sensor data from your device to Bluefruit LE over UART
 
 • Neopixels - control NeoPixels individually with an interactive color picker
 
-• Image Transfer - send an image to Bluefruit LE over UART
 
 • Updates - update device firmware
 
